@@ -1,8 +1,6 @@
 package src.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,6 +8,8 @@ import src.main.model.account.Chequing;
 import src.main.model.account.Loan;
 import src.main.model.account.Savings;
 import src.main.model.account.Account;
+import src.main.model.account.impl.Taxable;
+
 
 public class AccountTests {
 
@@ -71,6 +71,14 @@ public class AccountTests {
         accounts[2].deposit(1000);
         assertEquals(900, accounts[2].getBalance());
     }
- 
+
+    @Test
+    public void incomeTaxTest() {
+        double income = 4000;
+        accounts[0].deposit(income);
+        ((Taxable)accounts[0]).tax(income);
+        assertEquals(5374.51, accounts[0].getBalance());
+
+    }
 
 }
