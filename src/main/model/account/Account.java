@@ -1,6 +1,8 @@
 package src.main.model.account;
 
-abstract class Account {
+import java.text.DecimalFormat;
+
+public abstract class Account {
     String id;
     String name;
     double balance;
@@ -54,6 +56,15 @@ abstract class Account {
         "\t" + id + "" +
         "\t" + name + "" +
         "\t$" + balance + "";
+    }
+
+    public abstract void deposit(double amount);
+
+    public abstract boolean withdraw(double amount);
+
+    protected double round(double amount) {
+        DecimalFormat formatter = new DecimalFormat("#.##");
+        return Double.parseDouble(formatter.format(amount));
     }
 
 }
