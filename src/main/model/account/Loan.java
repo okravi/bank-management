@@ -32,4 +32,10 @@ public class Loan extends Account{
         return true;
     } 
 
+    @Override
+    public Account clone() {
+        Account copy = new Loan(this);
+        return copy;
+    } 
+
 }

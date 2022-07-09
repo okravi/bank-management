@@ -9,9 +9,6 @@ public class Chequing extends Account implements Taxable{
     private static final double TAXABLE_LIMIT = 3000;
     private static final double TAX_RATE = 0.15;
 
-
-    
-
     public Chequing(String id, String name, double balance) {
         super(id, name, balance);
     } 
@@ -44,5 +41,11 @@ public class Chequing extends Account implements Taxable{
         double tax = Math.max(0, income - TAXABLE_LIMIT) * TAX_RATE;
         super.setBalance(round(super.getBalance() - tax));
 
+    }
+
+    @Override
+    public Account clone() {
+        Account copy = new Chequing(this);
+        return copy;
     } 
 }

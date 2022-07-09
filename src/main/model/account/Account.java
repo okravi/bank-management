@@ -67,4 +67,6 @@ public abstract class Account {
         return Double.parseDouble(formatter.format(amount));
     }
 
+    public abstract Account clone();
+
 }
