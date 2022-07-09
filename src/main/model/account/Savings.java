@@ -13,9 +13,9 @@ public class Savings extends Account{
     }
 
     @Override
-    public void deposit(double amount) {
-        // TODO Auto-generated method stub
-        
+    public boolean deposit(double amount) {
+        super.setBalance(round(super.getBalance()+amount));
+        return true;
     }
 
     @Override

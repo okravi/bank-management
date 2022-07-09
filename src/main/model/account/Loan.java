@@ -15,8 +15,9 @@ public class Loan extends Account{
     }
 
     @Override
-    public void deposit(double amount) {
+    public boolean deposit(double amount) {
         super.setBalance(round(super.getBalance()+amount));
+        return true;
     }
 
     @Override

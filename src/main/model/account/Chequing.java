@@ -18,8 +18,9 @@ public class Chequing extends Account implements Taxable{
     }
 
     @Override
-    public void deposit(double amount) {
-        super.setBalance(round(super.getBalance()+amount));     
+    public boolean deposit(double amount) {
+        super.setBalance(round(super.getBalance()+amount));
+        return true;     
     }
 
     @Override

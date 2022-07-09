@@ -6,7 +6,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import src.main.model.Transaction;
-import src.main.model.account.*;
 
 public class TransactionTests {
 
