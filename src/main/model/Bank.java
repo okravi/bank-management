@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import src.main.model.account.Account;
-import src.main.model.account.Chequing;
 import src.main.model.account.impl.Taxable;
 
 public class Bank {
